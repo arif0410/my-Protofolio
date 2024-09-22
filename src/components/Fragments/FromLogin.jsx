@@ -8,12 +8,15 @@ const FormLogin = (props) => {
     window.location.href = "/product";
   }
     return(
-        <form onSubmit={HandelLogin}>
-          <InputForm label="Email" type="email" placeholder="Email@gmail.com" name="email"/>
-          <InputForm label="Password" type="password" placeholder="***********" name="password"/>
-          <Button warna="bg-blue-600 w-full " type="submit">Login</Button>
-        </form>
-    )
+        <>
+           <form onSubmit={HandelLogin}>
+             <InputForm label="Email" type="email" placeholder="Email@gmail.com" name="email"/>
+             <InputForm label="Password" type="password" placeholder="***********" name="password"/>
+             <Button warna="bg-green-500 w-full " type="submit">Login</Button>
+           </form>
+        </>
+      )
+
 }
 
 export default FormLogin;
