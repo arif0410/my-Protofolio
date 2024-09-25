@@ -2,25 +2,13 @@ import AuthLayouts from "../components/Layouts/AuthLayouts"
 import FormLogin from "../components/Fragments/FromLogin"
 import { Link } from "react-router-dom";
 import Button from "../components/Elements/Button";
+import NavLayouts from "../components/Layouts/NavLayouts";
 
 const LoginPage = () => {
     
     return (
         <>
-            <header className="w-full border-b px-4 sticky top-0 bg-white shadow-md z-10 " >
-                <nav className="mx-auto flex h-[72px] max-w-[1920px] items-center justify-between gap-8">
-                    <a
-                        href="https://www.figma.com/design/IufFgHHmVZ2380zb1yjjlX/VideoBelajar-1.0-(Copy)?node-id=506-28701&t=bK9UXwfHgxvF7V4M-4"
-                        className="flex items-center"
-                    >
-                        <img
-                        src="/image.png"
-                        alt="logo"
-                        className=" flex justify-content-center mx-3 justify-between h-[25px] w-[180px]"
-                        />
-                    </a>
-                </nav> 
-            </header>
+            <NavLayouts/>
             <AuthLayouts title="Login" type="login">   
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-0">Masuk Ke Akun</h2>
                 <h3 class="text-center text-gray-600 mb-6 ">Yuk Lanjutin belajarmu di videobelajar</h3>

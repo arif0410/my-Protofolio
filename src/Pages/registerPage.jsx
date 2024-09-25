@@ -4,24 +4,12 @@ import InputForm from "../components/Elements/Input";
 import CountryFlag from 'react-country-flag';
 import AuthLayouts from '../components/Layouts/AuthLayouts';
 import FormRegister from '../components/Fragments/FromRegister';
+import NavLayouts from '../components/Layouts/NavLayouts';
 
 const RegisterPage = (props) => {
      return (
         <>
-            <header className="w-full border-b px-4 sticky top-0 bg-white shadow-md z-10 " >
-                <nav className="mx-auto flex h-[72px] max-w-[1920px] items-center justify-between gap-8">
-                    <a
-                        href="https://www.figma.com/design/IufFgHHmVZ2380zb1yjjlX/VideoBelajar-1.0-(Copy)?node-id=506-28701&t=bK9UXwfHgxvF7V4M-4"
-                        className="flex items-center"
-                    >
-                        <img
-                        src="/image.png"
-                        alt="logo"
-                        className=" flex justify-content-center mx-3 justify-between h-[25px] w-[180px]"
-                        />
-                    </a>
-                </nav> 
-            </header>
+            <NavLayouts/>
             <AuthLayouts title="Register" type="register">
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-0">Pendaftaran Akun</h2>
                 <h3 class="text-center text-gray-600 mb-6 ">Yuk daftarkan akun kamu sekarang juga!</h3>

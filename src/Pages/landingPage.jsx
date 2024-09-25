@@ -1,81 +1,118 @@
+import FooterLayouts from "../components/Layouts/FooterLayouts";
+import NavLayouts from "../components/Layouts/NavLayouts";
+import CardLayouts from "../components/Layouts/CardLayouts";
+import Card from "../components/Elements/Card";
+
 const landingPage = () => {
+    const images = [
+        "/B41.jpeg",
+        "/B42.jpeg",
+        "/B43.jpeg",
+        "/B44.jpeg",
+        "/B45.jpeg",
+        "/B46.jpeg",
+        "/B47.jpeg",
+        "/B48.jpeg",
+        "/B49.jpeg",
+    ];
+
     return (
-        <body class="bg-gray-600 min-h-screen">
-
-       
-        <header className="bg-slate-200 bg-opacity-80 shadow border-cyan-700 border-spacing-8 fixed top-0 w-full z-50">
-            <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                <div className="text-xl font-bold text-gray-800">Arif Ibrahim</div>
-                <nav className="space-x-4">
-                    <a href="#" className="text-gray-600 hover:text-black hover:font-bold transition-transform duration-300">Home</a>
-                    <a href="#" className="text-gray-600 hover:text-black hover:font-bold transition-transform duration-300">Karya</a>
-                    <a href="#" className="text-gray-600 hover:text-black hover:font-bold transition-transform duration-300">Contact</a>
+        <>
+            <NavLayouts>
+                <nav id="menu" className="hidden lg:flex lg:items-center lg:space-x-6">
+                    <ul className="lg:flex lg:space-x-6">
+                        <li>
+                            <a href="#" className="block text-gray-800 hover:text-cyan-700">
+                                Kontak
+                            </a>
+                        </li>
+                        <li>
+                            <img className="w-8 h-8" src="/image1.png" alt="" />
+                        </li>
+                    </ul>
                 </nav>
-            </div>
-        </header>
+            </NavLayouts>
 
-    
-        
-        <section class="bg-gradient-to-b from-blue-600 to-blue-400 text-white h-screen">
-            <div class="container mx-auto flex flex-col md:flex-row items-center py-20 px-6">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:mr-10 flex justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv_OC3dhkmQKBeoki5bBnr_z5gFmFz3dnptw&s" alt="Arif Ibrahim" class="rounded-full shadow-lg w-48 h-48 object-cover" />
+            <section
+                className="mt-32 relative bg-black text-white py-20 px-6"
+                style={{ marginLeft: "10%", marginRight: "10%" }}
+            >
+                <div className="absolute inset-0 bg-cover bg-center opacity-40">
+                    <img src="/bgU.jpeg" alt="background_style" />
                 </div>
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl font-bold mb-4">Hi, I'm <b class="text-sky-500">Arif Ibrahim</b></h1>
-                    <p class="text-3xl font-light mb-8">Saya merupakan seorang junior web developer. Saya sedang belajar React JS dan Next JS. Sebelumnya, saya adalah Fullstack Developer dengan PHP dan framework Laravel.</p>
+                <div className="relative z-10 text-center">
+                    <h1 className="text-3xl font-bold mb-12">
+                        Revolusi Pembelajaran : Temukan Ilmu Baru melalui Platform Video interaktif!
+                    </h1>
+                    <h3 className="text-xl mb-4">
+                        Temukan ilmu baru yang menarik dan mendalam melalui video pembelajaran
+                        berkualitas tinggi.
+                    </h3>
+                    <h3 className="text-xl mb-12">
+                        Anda juga dapat berpartisipasi dalam latihan interaktif yang akan
+                        meningkatkan pemahaman Anda.
+                    </h3>
+                    <button
+                        type="submit"
+                        className="bg-green-500 text-white py-2 text-sl px-4 rounded-lg hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    >
+                        Temukan Video Course untuk Dipelajari
+                    </button>
                 </div>
-            </div>
-        </section>
-            
-        
-        <section class="bg-gradient-to-b from-blue-400 to-white text-gray-800 h-screen py-20 px-6">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Aplication</h2>
-                <div class="flex flex-wrap -mx-4">
-                    <div class="w-full md:w-1/3 px-4 mb-8">
-                        <div class="bg-white shadow rounded-lg p-6">
-                            <div class="text-blue-600 mb-4">
-                                <img src="/gummy.png" alt="gambas POS" />
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Point of Sales</h3>
-                            <p class="text-gray-600">Aplikasi Point of Sales merupakan perangkat lunak yang digunakan untuk memproses transaksi penjualan, mengelola inventaris, dan menghasilkan laporan keuangan.</p>
-                            <p class="text-gray-600 text-xl font-bold"><a href="https://github.com/arif0410/gummy-pos.git">Link Git </a></p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/3 px-4 mb-8">
-                        <div class="bg-white shadow rounded-lg p-6">
-                            <div class="text-blue-600 mb-4">
-                                <img src="/siperpus.png" alt="gambar siperpus" />
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">Siperpus</h3>
-                            <p class="text-gray-600">Aplikasi perpustakaan adalah perangkat lunak yang digunakan untuk mengelola koleksi buku, peminjaman, pengembalian, dan data anggota perpustakaan secara efisien.</p>
-                            <p class="text-gray-600 text-xl font-bold"><a href="https://github.com/arif0410/siperpus.git">Link Git </a></p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/3 px-4 mb-8">
-                        <div class="bg-white shadow rounded-lg p-6">
-                            <div class="text-blue-600 mb-4">
-                            <img src="/gummy.png" alt="" /> 
-                            </div>
-                            <h3 class="text-xl font-semibold mb-4">EDP</h3>
-                            <p class="text-gray-600">Aplikasi EDP adalah perangkat lunak yang digunakan untuk memproses transaksi penjualan, mengelola inventaris, dan meng-gayakan laporan keuangan di berbagai jenis bisnis.</p>
-                            <p class="text-gray-600 text-xl font-bold"><a href="https://github.com/arif0410/siperpus.git">Link Git </a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        
-        <footer className="bg-gray-800 text-white py-6 w-full fixed bottom-0">
-            <div className="container mx-auto text-center">
-                 <p>&copy; 2024 Arif Ibrahim. Goes To Work.</p>
-            </div>
-        </footer>
+            </section>
 
-    
-    </body>
-            )
-}
+            <section className="container-belicepat bg-white mb-12 text-gray-800 relative py-20 px-6">
+                <div className="bg-white shadow rounded-lg p-6">
+                    <div className="container mx-auto judul mb-6">
+                        <h2 className="text-2xl font-bold">
+                            Koleksi Video Pembelajaran Unggulan
+                        </h2>
+                        <p className="text-lg mt-4">
+                            Jelajahi Dunia Pengetahuan Melalui Pilihan Kami
+                        </p>
+                    </div>
+                    <div className="container mx-auto judul mb-6">
+                        <div className="flex flex-wrap gap-8">
+                            <h3 className="text-lg text-red-600 ">Semua Kelas</h3>
+                            <h3 className="text-lg text-red-600 ">Pemasaran</h3>
+                            <h3 className="text-lg text-red-600 ">Design</h3>
+                            <h3 className="text-lg text-red-600 ">Pengembangan Diri</h3>
+                            <h3 className="text-lg text-red-600 ">Bisnis</h3>
+                        </div>
+                    </div>
+                    <div className="container mx-auto">
+                        <div className="flex flex-wrap md:flex-nowrap gap-6 mt-6">
+                            {images.slice(0, 3).map((image, index) => (
+                                <Card key={index}>
+                                    <CardLayouts image={image} />
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="container mx-auto">
+                        <div className="flex flex-wrap md:flex-nowrap gap-6 mt-6">
+                            {images.slice(3, 6).map((image, index) => (
+                                <Card key={index}>
+                                    <CardLayouts image={image} />
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="container mx-auto">
+                        <div className="flex flex-wrap md:flex-nowrap gap-6 mt-6">
+                            {images.slice(6, 9).map((image, index) => (
+                                <Card key={index}>
+                                    <CardLayouts image={image} />
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <FooterLayouts />
+        </>
+    );
+};
+
 export default landingPage;
