@@ -6,6 +6,8 @@ import Lp from './Pages/login.jsx';
 import Rp from './Pages/registerPage.jsx';
 import ErrorPage from './Pages/404.jsx';
 import Land from './Pages/landingPage.jsx';
+import Crud from './Pages/crud.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -27,6 +29,11 @@ const router = createBrowserRouter([
   {
     path :"/product",
     element: <Land/>,  
+    errorElement: <ErrorPage/>
+  },
+  {
+    path :"/",
+    element: <Crud/>,  
     errorElement: <ErrorPage/>
   }
 ])

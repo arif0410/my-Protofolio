@@ -22,6 +22,11 @@ const landingPage = () => {
                 <nav id="menu" className="hidden lg:flex lg:items-center lg:space-x-6">
                     <ul className="lg:flex lg:space-x-6">
                         <li>
+                            <a href="/" className="block text-gray-800 hover:text-cyan-700">
+                                Crud
+                            </a>
+                        </li>
+                        <li>
                             <a href="#" className="block text-gray-800 hover:text-cyan-700">
                                 Kontak
                             </a>
