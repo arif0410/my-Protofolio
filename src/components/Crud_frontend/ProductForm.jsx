@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const ProductForm = ({ onSubmit, initialData, isEditing }) => {
   const [product, setProduct] = useState({
     name: '',
+    desc: '',
     price: '',
     quantity: ''
   });
@@ -21,7 +22,7 @@ const ProductForm = ({ onSubmit, initialData, isEditing }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(product);
-    setProduct({ name: '', price: '', quantity: '' });
+    setProduct({ name: '',desc: '', price: '', quantity: '' });
   };
 
   return (
@@ -29,8 +30,17 @@ const ProductForm = ({ onSubmit, initialData, isEditing }) => {
       <input
         type="text"
         name="name"
-        placeholder="Product Name"
+        placeholder="nama produk"
         value={product.name}
+        onChange={handleChange}
+        className="border border-gray-300 rounded-md p-2"
+        required
+      />
+      <input
+        type="text"
+        name="desc"
+        placeholder="deskripsi produk"
+        value={product.desc}
         onChange={handleChange}
         className="border border-gray-300 rounded-md p-2"
         required
@@ -38,7 +48,7 @@ const ProductForm = ({ onSubmit, initialData, isEditing }) => {
       <input
         type="number"
         name="price"
-        placeholder="Product Price"
+        placeholder="harga produk"
         value={product.price}
         onChange={handleChange}
         className="border border-gray-300 rounded-md p-2"

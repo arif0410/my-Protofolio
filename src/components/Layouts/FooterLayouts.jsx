@@ -2,7 +2,7 @@ const FooterLayouts = (props) => {
     const { children } = props;
     return (
         <>
-            <footer className="p-5 bg-slate-200 mt-32 text-gray-800 py-6 w-full">
+            <footer className="p-5 bg-slate-200 text-gray-800 py-6 w-full z-50 relative">
                 <div className="container mx-auto flex flex-wrap justify-between">
                 <div className="w-full md:w-1/2 mb-6 md:mb-0">
                     <img src="/image.png" alt="logo" className="h-13 w-32 mb-4" />
