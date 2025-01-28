@@ -8,6 +8,7 @@ import ErrorPage from './Pages/404.jsx';
 import Land from './Pages/landingPage.jsx';
 import Crud from './Pages/crud.jsx';
 import Cruds from './Pages/crudR.jsx';
+import CrudA from './Pages/CrudA.jsx';
 
 
 
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
   {
     path :"/",
     element: <Crud/>,  
+    errorElement: <ErrorPage/>
+  },
+  {
+    path :"/axios",
+    element: <CrudA/>,  
     errorElement: <ErrorPage/>
   },
   {
