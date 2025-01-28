@@ -35,9 +35,9 @@ const App = () => {
   };
 
   return (
-    <div className="flex bg-slate-300 h-auto">
+    <div className="flex bg-slate-300  h-screen ">
       <Sidebar />
-      <div className="flex-grow ml-64 p-6">
+      <div className="flex-grow ml-10 p-6">
         <h1 className="text-2xl font-bold mb-4">Product Management</h1>
         <ProductForm
           onSubmit={handleAddProduct}
@@ -53,6 +53,7 @@ const App = () => {
         />
       </div>
     </div>
+    
   );
 };
 
