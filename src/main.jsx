@@ -7,6 +7,7 @@ import Rp from './Pages/registerPage.jsx';
 import ErrorPage from './Pages/404.jsx';
 import Land from './Pages/landingPage.jsx';
 import Crud from './Pages/crud.jsx';
+import Cruds from './Pages/crudR.jsx';
 
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
   {
     path :"/",
     element: <Crud/>,  
+    errorElement: <ErrorPage/>
+  },
+  {
+    path :"/CrudRegister",
+    element: <Cruds/>,  
     errorElement: <ErrorPage/>
   }
 ])

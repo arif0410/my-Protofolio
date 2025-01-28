@@ -20,7 +20,7 @@ const FormRegister = (props) => {
         event.preventDefault();
         localStorage.setItem('email', event.target.elements.email.value);
         localStorage.setItem('password', event.target.elements.password.value);
-        window.location.href = "/product"; 
+        window.location.href = "#"; 
     };
 
     return (

@@ -1,90 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import ProductForm from '../components/Crud_frontend/ProductForm';
 import ProductList from '../components/Crud_frontend/ProductList';
-import NavLayouts from '../components/Layouts/NavLayouts';
-import FooterLayouts from '../components/Layouts/FooterLayouts';
+import Sidebar from '../components/Crud_frontend/Sidebar';          
+import ProductForm from '../components/Crud_frontend/ProductForm';  
 
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([
+    { title: 'square', subtitle: 'B42', price: 10000, mentor: 'B42', roleMentor: 'B42', photoUrl: 'B42' },
+    { title: 'box', subtitle: 'B32', price: 10000, mentor: 'B42', roleMentor: 'B42', photoUrl: 'B42' },
+  ]);
   const [editIndex, setEditIndex] = useState(null);
-
   useEffect(() => {
-    const storedProducts = JSON.parse(localStorage.getItem('products'));
-    if (storedProducts) setProducts(storedProducts);
+    const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
+    setProducts(savedProducts);
   }, []);
-
-
   useEffect(() => {
     localStorage.setItem('products', JSON.stringify(products));
   }, [products]);
-
-  const addProduct = (newProduct) => {
-    if (editIndex !== null) {
-      const updatedProducts = products.map((product, index) =>
-        index === editIndex ? newProduct : product
-      );
+  const handleAddProduct = (product) => {
+    if (editIndex !== null && editIndex >= 0) {
+      const updatedProducts = products.map((p, index) => (index === editIndex ? product : p));
       setProducts(updatedProducts);
-      setEditIndex(null);
     } else {
-      setProducts([...products, newProduct]);
+      setProducts([...products, product]);
     }
+    setEditIndex(null);
   };
 
-  const deleteProduct = (index) => {
-    const updatedProducts = products.filter((_, i) => i !== index);
-    setProducts(updatedProducts);
+  const handleDeleteProduct = (index) => {
+    setProducts(products.filter((_, i) => i !== index));
   };
 
-  const editProduct = (index) => {
+  const handleEditProduct = (index) => {
     setEditIndex(index);
   };
 
-  const resetEdit = () => setEditIndex(null);
-
   return (
-    <>
-      <NavLayouts>
-        <nav id="menu" className="hidden lg:flex lg:items-center lg:space-x-6 z-50 relative">
-          <ul className="lg:flex lg:space-x-6">
-            <li>
-              <a href="/" className="block text-gray-800 hover:text-cyan-700">
-                Crud
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block text-gray-800 hover:text-cyan-700">
-                Kontak
-              </a>
-            </li>
-            <li>
-              <img className="w-8 h-8" src="/image1.png" alt="Logo" />
-            </li>
-          </ul>
-        </nav>
-      </NavLayouts>    
-      <div className="w-full lg:w-1/4 p-4 bg-white shadow-md z-40 h-auto lg:fixed lg:top-16 lg:left-0 lg:h-screen lg:overflow-auto">
+    <div className="flex bg-slate-300 h-auto">
+      <Sidebar />
+      <div className="flex-grow ml-64 p-6">
+        <h1 className="text-2xl font-bold mb-4">Product Management</h1>
         <ProductForm
-          onSubmit={addProduct}
+          onSubmit={handleAddProduct}
           initialData={editIndex !== null ? products[editIndex] : null}
-          isEditing={editIndex !== null}
-          resetEdit={resetEdit}
+        />
+        <div className='bg-slate-200 p-6 shadow-md mt-4'> 
+          <h1>Product List</h1>
+        </div>
+        <ProductList
+          products={products}
+          onEdit={handleEditProduct}
+          onDelete={handleDeleteProduct}
         />
       </div>
-      <div className='bg-slate-100 min-h-full'>
-        <div className="min-h-screen p-6 lg:pl-[25%] pt-20 lg:pt-24 flex justify-center">
-          <div className="max-w-6xl mx-auto w-full">
-            <h1 className="text-2xl font-bold text-center mb-6">CRUD Front End</h1>
-            <ProductList
-              products={products}
-              onDelete={deleteProduct}
-              onEdit={editProduct}
-            />
-          </div>
-        </div>
-      </div>
-
-      <FooterLayouts />
-    </>
+    </div>
   );
 };
 
