@@ -13,7 +13,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
   useEffect(() => {
     if (initialData) {
-      setProduct(initialData); 
+      setProduct(initialData);
     }
   }, [initialData]);
 
@@ -27,7 +27,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(product);  
+    onSubmit(product);
     setProduct({
       title: '',
       subtitle: '',
@@ -41,7 +41,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-slate-200 p-6 shadow-md rounded-md space-y-4">
-      <div className='display flex gap-4'>
+      <div className="display flex gap-4">
         <div>
           <label className="block font-bold">Title</label>
           <input
