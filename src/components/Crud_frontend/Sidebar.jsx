@@ -28,13 +28,13 @@ const Sidebar = () => {
         </div>
         <ul className="mt-8">
           <li className="px-6 py-3 hover:bg-gray-200 cursor-pointer">
-            <a href="#">Dashboard</a>
+            <a href="/">Crud</a>
           </li>
           <li className="px-6 py-3 hover:bg-gray-200 cursor-pointer">
-            <a href="#">Products</a>
+            <a href="/axios">Axios</a>
           </li>
           <li className="px-6 py-3 hover:bg-gray-200 cursor-pointer">
-            <a href="#">Users</a>
+            <a href="/redux">Redux</a>
           </li>
         </ul>
       </div>

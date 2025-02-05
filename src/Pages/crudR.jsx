@@ -8,7 +8,7 @@ import ProductForm from '../components/Crud_frontend/ProductForm';
 const CrudR = () => {
     const dispatch = useDispatch();
     const { products = [], loading, error } = useSelector((state) => {
-        console.log('State:', state); // Debug state
+        console.log('State:', state); 
         return state.product;
     });
     const [editIndex, setEditIndex] = React.useState(null);

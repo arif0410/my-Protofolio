@@ -12,14 +12,14 @@ import Crud from './Pages/crud.jsx';
 import CrudA from './Pages/CrudA.jsx';
 import CrudR from './Pages/crudR.jsx';
 
-// Debugging Redux Store
+
 store.subscribe(() => {
   console.log("Redux Store Updated:", store.getState());
 });
 
 console.log("Redux Store Initial State:", store.getState());
 
-// Konfigurasi routing
+
 const router = createBrowserRouter([
   { 
     path: '/home', 
@@ -58,11 +58,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-// Render aplikasi
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider store={store}> {/* Sediakan store Redux ke seluruh aplikasi */}
-      <RouterProvider router={router} /> {/* Gunakan router */}
+    <Provider store={store}> {/* menyediakan store Redux ke seluruh aplikasi */}
+      <RouterProvider router={router} /> {/* menggunakan router */}
     </Provider>
   </React.StrictMode>
 );

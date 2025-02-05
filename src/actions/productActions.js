@@ -5,7 +5,6 @@ import {
     deleteProduct as deleteProductAPI
 } from '../services/product.service';
 
-// Action types
 export const FETCH_PRODUCTS_REQUEST = 'FETCH_PRODUCTS_REQUEST';
 export const FETCH_PRODUCTS_SUCCESS = 'FETCH_PRODUCTS_SUCCESS';
 export const FETCH_PRODUCTS_FAILURE = 'FETCH_PRODUCTS_FAILURE';
@@ -22,7 +21,7 @@ export const DELETE_PRODUCT_REQUEST = 'DELETE_PRODUCT_REQUEST';
 export const DELETE_PRODUCT_SUCCESS = 'DELETE_PRODUCT_SUCCESS';
 export const DELETE_PRODUCT_FAILURE = 'DELETE_PRODUCT_FAILURE';
 
-// Action creators
+
 export const fetchProducts = () => {
     return async (dispatch) => {
         dispatch({ type: FETCH_PRODUCTS_REQUEST });
